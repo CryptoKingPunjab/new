@@ -559,10 +559,26 @@ particlesJS('particles-js',{
 let livePrices={};
 let liveChanges={};
 const COINS={
-  bitcoin:  {name:'Bitcoin', ticker:'BTC', logo:'https://cryptologos.cc/logos/bitcoin-btc-logo.png'},
-  ethereum: {name:'Ethereum',ticker:'ETH', logo:'https://cryptologos.cc/logos/ethereum-eth-logo.png'},
-  solana:   {name:'Solana',  ticker:'SOL', logo:'https://cryptologos.cc/logos/solana-sol-logo.png'},
-  binancecoin:{name:'BNB',   ticker:'BNB', logo:'https://cryptologos.cc/logos/binance-coin-bnb-logo.png'}
+  bitcoin:{
+    name:'Bitcoin',
+    ticker:'BTC',
+    logo:'/new/assets/images/btc.png'
+  },
+  ethereum:{
+    name:'Ethereum',
+    ticker:'ETH',
+    logo:'/new/assets/images/eth.png'
+  },
+  solana:{
+    name:'Solana',
+    ticker:'SOL',
+    logo:'/new/assets/images/sol.png'
+  },
+  binancecoin:{
+    name:'BNB',
+    ticker:'BNB',
+    logo:'/new/assets/images/bnb.png'
+  }
 };
 
 async function fetchPrices(){
@@ -703,3 +719,4 @@ loadFG();
 </body>
 
 </html>
+

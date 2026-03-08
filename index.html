@@ -562,25 +562,25 @@ const COINS={
   bitcoin:{
     name:'Bitcoin',
     ticker:'BTC',
-    logo:'/new/assets/images/btc.png'
+    logo:'assets/images/btc.png'
   },
   ethereum:{
     name:'Ethereum',
     ticker:'ETH',
-    logo:'/new/assets/images/eth.png'
+    logo:'assets/images/eth.png'
   },
   solana:{
     name:'Solana',
     ticker:'SOL',
-    logo:'/new/assets/images/sol.png'
+    logo:'assets/images/sol.png'
   },
   binancecoin:{
     name:'BNB',
     ticker:'BNB',
-    logo:'/new/assets/images/bnb.png'
+    logo:'assets/images/bnb.png'
   }
 };
-
+  
 async function fetchPrices(){
   try{
     const res=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin&vs_currencies=usd&include_24hr_change=true&include_market_cap=true');
@@ -719,4 +719,5 @@ loadFG();
 </body>
 
 </html>
+
 

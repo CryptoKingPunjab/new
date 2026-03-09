@@ -34,6 +34,7 @@
   --down:#f45b69;
   --text:#dde3ff;
   --muted:#8b92b8;
+  --chart-tick:#c8cee8;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -273,6 +274,29 @@ nav{
 .fg-label{font-size:.85rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
 .fg-description{font-size:.95rem;color:var(--muted);max-width:260px}
 
+/* sentiment section layout */
+.sentiment-layout{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:32px;
+  align-items:center;
+}
+.sentiment-text h3{
+  font-family:'Syne',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:#fff;margin-bottom:10px;
+}
+.sentiment-text p{
+  color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:10px;
+}
+.sentiment-badges{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+}
+.s-badge{
+  padding:5px 14px;border-radius:999px;font-size:.82rem;font-weight:600;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--text);
+}
+
 /* ──────────── FEATURES GRID ──────────── */
 .features{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -332,6 +356,7 @@ footer a{color:var(--accent);text-decoration:none}
   .section{padding:32px 20px}
   .stat-item{min-width:100px}
   nav{padding:0 16px}
+  .sentiment-layout{grid-template-columns:1fr}
 }
 @media(max-width:540px){
   .hero h1{font-size:2.4rem}
@@ -370,7 +395,8 @@ footer a{color:var(--accent);text-decoration:none}
   <ul class="nav-links" id="navLinks">
     <li><a href="#prices">Live Prices</a></li>
     <li><a href="#chart">BTC Chart</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#sentiment">Sentiment</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
   <a href="https://t.me/CryptoKingPunjab" target="_blank" class="nav-cta">
@@ -463,10 +489,10 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
 </div>
 
-<!-- FEAR & GREED + FEATURES -->
-<div class="section" id="about">
-  <h2 class="section-title">🧠 Market Sentiment & Why Crypto Education?</h2>
-  <div style="display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:start">
+<!-- ─── SECTION 1: MARKET SENTIMENT ─── -->
+<div class="section" id="sentiment">
+  <h2 class="section-title">🧠 Market Sentiment</h2>
+  <div class="sentiment-layout">
     <div class="fg-widget" id="fgWidget">
       <div class="fg-ring">
         <svg viewBox="0 0 130 130" width="130" height="130">
@@ -479,27 +505,43 @@ footer a{color:var(--accent);text-decoration:none}
       <div class="fg-label" id="fgLabel">Fear & Greed Index</div>
       <div class="fg-description">A score of 0 is Extreme Fear; 100 is Extreme Greed.</div>
     </div>
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-icon">🎓</div>
-        <div class="feature-title">Education in Punjabi</div>
-        <div class="feature-desc">Complex crypto concepts explained simply in your mother tongue. No jargon — just clear knowledge.</div>
+    <div class="sentiment-text">
+      <h3>What is the Fear & Greed Index?</h3>
+      <p>The Crypto Fear & Greed Index measures market emotions on a scale from 0 (Extreme Fear) to 100 (Extreme Greed). It is calculated using volatility, market momentum, social media sentiment, surveys, Bitcoin dominance, and search trends.</p>
+      <p>Savvy investors often use it as a contrarian signal — when the market is in <strong style="color:var(--down)">Extreme Fear</strong>, it can signal a potential buying opportunity. When it shows <strong style="color:var(--up)">Extreme Greed</strong>, the market may be due for a correction.</p>
+      <div class="sentiment-badges">
+        <span class="s-badge" style="border-color:rgba(244,91,105,.3);color:var(--down)">0–24 Extreme Fear</span>
+        <span class="s-badge" style="border-color:rgba(249,115,22,.3);color:#f97316">25–49 Fear</span>
+        <span class="s-badge" style="border-color:rgba(249,199,79,.3);color:var(--gold)">50–74 Greed</span>
+        <span class="s-badge" style="border-color:rgba(35,209,139,.3);color:var(--up)">75–100 Extreme Greed</span>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📡</div>
-        <div class="feature-title">24/7 Live Updates</div>
-        <div class="feature-desc">Breaking crypto news, market moves, and whale alerts delivered in real time on Telegram.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <div class="feature-title">Scam Awareness</div>
-        <div class="feature-desc">Learn how to spot fake projects, rug pulls, and phishing attacks before they hurt your wallet.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌐</div>
-        <div class="feature-title">Decentralization</div>
-        <div class="feature-desc">Understand why blockchain matters — self-custody, financial freedom, and borderless value transfer.</div>
-      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 2: WHY CRYPTO EDUCATION ─── -->
+<div class="section" id="education">
+  <h2 class="section-title">🎓 Why Crypto Education?</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🎓</div>
+      <div class="feature-title">Education in Punjabi</div>
+      <div class="feature-desc">Complex crypto concepts explained simply in your mother tongue. No jargon — just clear knowledge.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📡</div>
+      <div class="feature-title">24/7 Live Updates</div>
+      <div class="feature-desc">Breaking crypto news, market moves, and whale alerts delivered in real time on Telegram.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">Scam Awareness</div>
+      <div class="feature-desc">Learn how to spot fake projects, rug pulls, and phishing attacks before they hurt your wallet.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌐</div>
+      <div class="feature-title">Decentralization</div>
+      <div class="feature-desc">Understand why blockchain matters — self-custody, financial freedom, and borderless value transfer.</div>
     </div>
   </div>
 </div>
@@ -677,10 +719,32 @@ async function loadChart(){
       },
       options:{
         responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(10,12,28,.9)',titleColor:'#fff',bodyColor:'#a78bfa',padding:12,cornerRadius:10}},
+        plugins:{
+          legend:{display:false},
+          tooltip:{
+            backgroundColor:'rgba(10,12,28,.9)',
+            titleColor:'#ffffff',
+            bodyColor:'#c8cee8',
+            padding:12,
+            cornerRadius:10
+          }
+        },
         scales:{
-          x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'var(--muted)',font:{size:12}}},
-          y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'var(--muted)',font:{size:12},callback:v=>'$'+v.toLocaleString()}}
+          x:{
+            grid:{color:'rgba(255,255,255,.06)'},
+            ticks:{
+              color:'#c8cee8',   /* ✅ FIXED: brighter tick labels */
+              font:{size:12,weight:'600'}
+            }
+          },
+          y:{
+            grid:{color:'rgba(255,255,255,.06)'},
+            ticks:{
+              color:'#c8cee8',   /* ✅ FIXED: brighter tick labels */
+              font:{size:12,weight:'600'},
+              callback:v=>'$'+v.toLocaleString()
+            }
+          }
         }
       }
     });
@@ -717,9 +781,4 @@ loadFG();
 </script>
 
 </body>
-
 </html>
-
-
-
-
